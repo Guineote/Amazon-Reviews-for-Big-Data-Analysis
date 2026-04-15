@@ -25,22 +25,25 @@ Ensure PostgreSQL is running. Create the target database `amazon_project`. The p
 This script processes the raw CSV data, performs cleaning (`dropna`), data typing, and saves the highly optimized output as Parquet files.
 ```bash
 python scripts/process.py
+```
 
 ### Step 3: Analytical Aggregations & Joins
 This script reads the optimized Parquet files, performs a Join with a business rule catalog, and calculates aggregated metrics (counts and averages).
 ```bash
 python scripts/analytics.py
+```
 
 ### Step 4: Streaming Processing Simulation
 To simulate a real-time environment, this script runs two threads: one generating micro-batches of CSV files every few seconds, and a PySpark Structured Streaming instance reading and processing them incrementally.
 ```bash
 python scripts/streaming_simulation.py
-
+```
 
 ### Step 5: Advanced Analytics (Machine Learning)
 This script trains an unsupervised Machine Learning model (K-Means Clustering) to segment customers into 3 profiles based on review length and sentiment. The structured output is then loaded directly into PostgreSQL.
 ```bash
 python scripts/ml_model_and_load.py
+```
 
 ### Step 6: Dashboarding
 1. Open Power BI Desktop.
