@@ -49,8 +49,8 @@ def run_ml_and_load():
     print("3. Guardando Modelo Analítico en PostgreSQL...")
     DB_URL = "jdbc:postgresql://localhost:5432/amazon_project"
     DB_PROPERTIES = {
-        "user": "postgres", 
-        "password": "quixo284650",
+        "user": "user", 
+        "password": "psw_here",
         "driver": "org.postgresql.Driver"
     }
     
